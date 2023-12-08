@@ -16,6 +16,7 @@
   - Position
   - Word Wrap
   - Justify Content
+  - Align Items
   - Text Decoration
   - Letter Spacing
   - Word Spacing
