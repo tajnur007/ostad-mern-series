@@ -1,0 +1,116 @@
+:root {
+  --app-bg-color: #268f90;
+  --app-font-size: 14px;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+h1 {
+  color: #00ffff;
+  font-size: var(--app-font-size);
+}
+
+#idStyle {
+  color: chocolate;
+  border: 1px solid blue;
+  padding: 10px 20px 40px 50px;
+}
+
+.container {
+  font-size: 18px;
+}
+
+.container a {
+  font-size: 14px !important;
+}
+
+.line-height {
+  line-height: 30px;
+}
+
+.padding {
+  border: 1px solid red;
+  /* padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px; */
+
+  /* padding: 10px 20px; */
+  /* padding: 10px 20px 50px; */
+  padding: 50px;
+  text-decoration: underline;
+}
+
+.margin {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.opacity {
+  opacity: 0.3;
+  letter-spacing: 3px;
+}
+
+.word-wrap {
+  word-wrap: break-word;
+}
+
+.outer-box {
+  width: 100px;
+  height: 100px;
+  border: 1px solid green;
+  padding: 20px;
+  margin: 30px;
+  background-color: var(--app-bg-color);
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+
+.inner-box {
+  width: 150px;
+  height: 120px;
+  border: 1px dashed maroon;
+}
+
+.outer-box2 {
+  width: 100px;
+  height: 100px;
+  border: 1px solid green;
+  padding: 20px;
+  margin: 30px;
+  position: sticky;
+  background-color: var(--app-bg-color);
+  top: 0px;
+}
+
+.inner-box2 {
+  width: 30px;
+  height: 30px;
+  border: 1px dashed maroon;
+}
+
+.inner-box3 {
+  width: 30px;
+  height: 30px;
+  border: 1px dashed maroon;
+}
+
+nav {
+  display: flex;
+  justify-content:space-evenly;
+  padding: 5px 10px;
+  box-shadow: 0 0 5px gray;
+}
+
+.word-spacing {
+  word-spacing: 10px;
+  background-color: var(--app-bg-color);
+}
