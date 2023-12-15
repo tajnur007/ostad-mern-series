@@ -1,0 +1,17 @@
+:root {
+  --app-magenta-color: #ff00ff;
+}
+
+.text-magenta {
+  color: var(--app-magenta-color);
+}
+
+.bg-magenta {
+  color: var(--app-magenta-color);
+}
+
+@media only screen and (max-width: 1800px) {
+  .margin {
+    background-color: lightgreen;
+  }
+}
