@@ -1,0 +1,20 @@
+{
+  "name": "task-tracker",
+  "version": "1.0.0",
+  "description": "**Task Tracker** is a streamlined web application designed to enhance productivity and organization for both individual users and administrators. The user panel allows individuals to register, log in, and effortlessly manage their tasks by adding, editing, and marking them as complete. Users can also update their profiles for a personalized experience. On the admin side, an exclusive panel empowers administrators with the ability to oversee all tasks, assign priorities, and manage user accounts efficiently. With additional features such as email notifications, search functionality, and data visualization, Task Tracker ensures a comprehensive task management experience. Built with modern web technologies, this project is an excellent opportunity for users to master CRUD operations, authentication mechanisms, and gain hands-on experience in developing dynamic web applications.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "^7.1.0",
+    "hpp": "^0.2.3",
+    "xss-clean": "^0.1.4"
+  }
+}
