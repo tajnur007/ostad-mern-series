@@ -1,1 +1,3 @@
-# ostad-mern-series
+# Ostad MERN Series
+
+Welcome to the Unofficial MERN Stack Course Repository tailored for Ostad's dynamic online training platform! As a part-time instructor, I've curated this repository to provide an additional resource hub for students across various MERN stack batches on Ostad. Dive into organized lecture notes, diverse projects, and code snippets to complement your learning journey. Feel free to collaborate, share insights, and contribute to the collective knowledge pool. Let's make the MERN stack learning experience on Ostad even more enriching together! Happy coding!
