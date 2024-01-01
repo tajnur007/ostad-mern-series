@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.20.2",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
@@ -22,5 +23,8 @@
     "nodemon": "^3.0.2",
     "path": "^0.12.7",
     "xss-clean": "^0.1.4"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }

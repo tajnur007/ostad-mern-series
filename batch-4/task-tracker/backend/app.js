@@ -8,7 +8,10 @@ const cookieParser = require('cookie-parser');
 const path = require('path');
 const mongoSanitize = require('express-mongo-sanitize');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 require('dotenv').config();
+
+const userRouter = require('./src/routes/user-routes');
 
 // const router = require('./src/routes/api');
 
@@ -44,6 +47,10 @@ app.use(cookieParser());
 // Using MongoDB sanitize for sanitizing user input
 app.use(mongoSanitize());
 
+// Using Body Parser
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
 // MongoDB Connection
 async function main() {
   const connectionString = `mongodb+srv://${process.env.MONGODB_USER}:${process.env.MONGODB_PASSWORD}@cluster0.hwr1u.mongodb.net/`;
@@ -54,6 +61,8 @@ async function main() {
 }
 main().catch(err => console.log('Error occured::', err));
 
+
+app.use(userRouter);
 
 
 
