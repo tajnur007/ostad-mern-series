@@ -6,7 +6,7 @@ Task (/task)
   - Create (POST)
   - Update (PUT)
   - Delete (DELETE)
-  - Sigle Task (GET)
+  - Single Task (GET)
   - All Tasks (GET) (/tasks)
 
 User (/user)
