@@ -12,6 +12,7 @@ require('dotenv').config();
 const dbConnection = require('./db');
 
 const userRouter = require('./src/routes/user-routes');
+const taskRouter = require('./src/routes/task-routes');
 
 
 
@@ -56,6 +57,7 @@ dbConnection().catch(
 
 
 app.use(userRouter);
+app.use(taskRouter);
 
 
 

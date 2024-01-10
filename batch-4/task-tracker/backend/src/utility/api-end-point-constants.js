@@ -3,6 +3,12 @@ const user = {
   allUsers: '/users'
 };
 
+const task = {
+  task: '/task',
+  allTasks: '/tasks'
+};
+
 module.exports = {
-  user
+  user,
+  task,
 };
