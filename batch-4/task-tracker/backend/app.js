@@ -13,6 +13,7 @@ const dbConnection = require('./db');
 
 const userRouter = require('./src/routes/user-routes');
 const taskRouter = require('./src/routes/task-routes');
+const authRouter = require('./src/routes/auth-routes');
 
 
 
@@ -58,6 +59,7 @@ dbConnection().catch(
 
 app.use(userRouter);
 app.use(taskRouter);
+app.use(authRouter);
 
 
 
