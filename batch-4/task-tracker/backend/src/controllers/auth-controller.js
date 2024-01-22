@@ -36,11 +36,7 @@ const signin = async (req, res) => {
 };
 
 const signout = async (req, res) => {
-  const authValue = req.headers.authorization;
-  const authToken = authValue?.split(' ')[1];
-
   try {
-    const decodedData = jwt.verify(authToken, process.env.AUTH_SECRET);
     const filter = { email: decodedData.data.email };
     const resp = await UserModel.findOneAndUpdate(filter, {
       authToken: ''

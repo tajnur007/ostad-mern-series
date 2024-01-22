@@ -1,18 +1,21 @@
 const TaskModel = require('../models/task-models');
+const { parseUserToken } = require('../utility/helpers');
 
 const createTask = async (req, res) => {
-  const taskData = {
-    // ...req.body,
-    title: req.body?.title,
-    description: req.body?.description,
-    status: req.body?.status,
-    priority: req.body?.priority,
-    assignee: req.body?.assignee,
-    createdBy: 'tajnur123@gmail.com',
-    isDeleted: false,
-  };
-
   try {
+    const userData = parseUserToken(req);
+
+    const taskData = {
+      // ...req.body,
+      title: req.body?.title,
+      description: req.body?.description,
+      status: req.body?.status,
+      priority: req.body?.priority,
+      assignee: req.body?.assignee,
+      createdBy: userData.email,
+      isDeleted: false,
+    };
+
     const resp = await TaskModel.create(taskData);
 
     res.status(201).send({
@@ -34,6 +37,7 @@ const updateTask = async (req, res) => {
 
   try {
     const resp = await TaskModel.findOneAndUpdate(filter, update);
+
     res.send({
       msg: 'Task updated!',
       data: resp
@@ -51,6 +55,7 @@ const deleteTask = async (req, res) => {
 
   try {
     const resp = await TaskModel.findOneAndUpdate(filter, update);
+
     res.send({
       msg: 'Task deleted!',
       data: resp
