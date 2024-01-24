@@ -1,11 +1,13 @@
 const user = {
   user: '/user',
-  allUsers: '/users'
+  allUsers: '/users',
+  search: '/user/search',
 };
 
 const task = {
   task: '/task',
-  allTasks: '/tasks'
+  allTasks: '/tasks',
+  search: '/task/search',
 };
 
 const auth = {

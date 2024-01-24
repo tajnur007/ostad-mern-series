@@ -11,5 +11,6 @@ taskRouter.put(taskEndPoints.task, authMiddlewares.isValidUser, taskControllers.
 taskRouter.delete(taskEndPoints.task, authMiddlewares.isValidUser, taskControllers.deleteTask);
 taskRouter.get(taskEndPoints.task, authMiddlewares.isValidUser, taskControllers.singleTask);
 taskRouter.get(taskEndPoints.allTasks, authMiddlewares.isValidUser, taskControllers.allTasks);
+taskRouter.get(taskEndPoints.search, authMiddlewares.isValidUser, taskControllers.searchTasks);
 
 module.exports = taskRouter;

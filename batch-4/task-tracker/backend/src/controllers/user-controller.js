@@ -2,6 +2,7 @@ const UserModel = require('../models/user-models');
 
 const createUser = async (req, res) => {
   const userData = req.body;
+  userData.role = 'executive';
 
   try {
     const resp = await UserModel.create(userData);
@@ -78,10 +79,33 @@ const allUsers = async (req, res) => {
   }
 };
 
+const searchUsers = async (req, res) => {
+  try {
+    let keyword = '';
+    if (req.query.keyword) keyword = decodeURI(req.query.keyword);
+
+    let resp = await UserModel.find();
+    resp = resp.filter(user => {
+      return (
+        user.name.toLocaleLowerCase().includes(keyword.toLocaleLowerCase()) ||
+        user.email.toLocaleLowerCase().includes(keyword.toLocaleLowerCase())
+      );
+    });
+
+    res.send({
+      msg: 'Searched users',
+      data: resp
+    });
+  } catch (e) {
+    res.status(500).send('Something went wrong!');
+  }
+};
+
 module.exports = {
   createUser,
   updateUser,
   deleteUser,
   singleUser,
-  allUsers
+  allUsers,
+  searchUsers,
 };
