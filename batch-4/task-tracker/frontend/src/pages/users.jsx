@@ -1,12 +1,12 @@
 import AuthorizedLayout from '../components/layouts/authorized-layout';
 
 
-const HomePage = () => {
+const UsersPage = () => {
   return (
     <AuthorizedLayout>
-      Home page
+      UsersPage
     </AuthorizedLayout>
   );
 };
 
-export default HomePage;
+export default UsersPage;

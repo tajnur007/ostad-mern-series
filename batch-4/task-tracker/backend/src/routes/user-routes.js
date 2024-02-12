@@ -6,7 +6,7 @@ const authMiddlewares = require('../middlewares/auth-middlewares');
 const userRouter = express.Router();
 const userEndPoints = apiEndPoints.user;
 
-userRouter.post(userEndPoints.user, authMiddlewares.isValidUser, userControllers.createUser);
+userRouter.post(userEndPoints.user, userControllers.createUser);
 userRouter.put(userEndPoints.user, authMiddlewares.isValidUser, userControllers.updateUser);
 userRouter.delete(userEndPoints.user, authMiddlewares.isAdmin, userControllers.deleteUser);
 userRouter.get(userEndPoints.user, authMiddlewares.isAdmin, userControllers.singleUser);
