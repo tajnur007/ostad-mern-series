@@ -12,13 +12,17 @@ const signin = async (req, res) => {
 
   try {
     const resp = await UserModel.findOne(filter);
+    const userData = {
+      name: resp.name,
+      email: resp.email,
+      role: resp.role,
+      address: resp.address,
+      phone: resp.phone,
+    };
 
     const authToken = jwt.sign({
       exp: Math.floor(Date.now() / 1000) + (60 * 60), // 1 hour
-      data: {
-        email: resp.email,
-        role: resp.role,
-      }
+      data: userData
     }, process.env.AUTH_SECRET);
 
     await UserModel.findOneAndUpdate(filter, {
@@ -27,7 +31,10 @@ const signin = async (req, res) => {
 
     res.status(201).send({
       msg: 'Session created!',
-      data: authToken,
+      data: {
+        ...userData,
+        auth_token: authToken,
+      },
     });
   } catch (e) {
     res.status(404).send('User not found!');

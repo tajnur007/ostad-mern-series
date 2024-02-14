@@ -2,11 +2,24 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
-import { PAGE_ROUTES } from '../utils/constants/common-constants';
+import { PAGE_ROUTES, STORAGE_KEYS } from '../utils/constants/common-constants';
 import { useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
 const AppNavbar = () => {
   const navigate = useNavigate();
+  const [userData, setUserData] = useState(null);
+
+  useEffect(() => {
+    const userDataFromLocalStorage = localStorage.getItem(STORAGE_KEYS.USER_DATA);
+    const parsedUserData = userDataFromLocalStorage ? JSON.parse(userDataFromLocalStorage) : null;
+
+    if (parsedUserData) {
+      setUserData(parsedUserData);
+    } else {
+      handleLogout();
+    }
+  }, []);
 
   const handleLogout = () => {
     localStorage.clear();
@@ -26,7 +39,7 @@ const AppNavbar = () => {
           </Nav>
           <Nav>
             <p className='m-0 text-white d-flex justify-content-center align-items-center'>
-              Hello <strong className='ms-1'>{'K. Tajnur'}</strong>!
+              Hello <strong className='ms-1'>{userData?.name || ''}</strong>!
             </p>
             <Button variant='primary' size='sm' className='ms-3' onClick={handleLogout}>
               Logout

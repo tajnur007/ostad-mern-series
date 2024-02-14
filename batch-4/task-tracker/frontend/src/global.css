@@ -8,3 +8,14 @@
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
+
+.cursor-pointer {
+  cursor: pointer;;
+}
+
+.summary-card-container {
+  margin: 30px 0px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}

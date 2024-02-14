@@ -31,8 +31,9 @@ const LoginPage = () => {
 
     login(payload)
       .then(resp => {
-        const authToken = resp.data.data;
-        localStorage.setItem(STORAGE_KEYS.AUTH_TOKEN, JSON.stringify(authToken));
+        const { auth_token, ...userData } = resp.data.data;
+        localStorage.setItem(STORAGE_KEYS.AUTH_TOKEN, JSON.stringify(auth_token));
+        localStorage.setItem(STORAGE_KEYS.USER_DATA, JSON.stringify(userData));
         toast.success('Successfully logged in!');
         navigate(PAGE_ROUTES.HOME);
       })
