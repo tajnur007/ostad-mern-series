@@ -11,3 +11,5 @@ export const PAGE_ROUTES = {
   SIGNUP: '/auth/signup',
   FORGET_PASSWORD: '/auth/forget-password',
 };
+
+export const API_BASE_URL = 'http://localhost:5000';

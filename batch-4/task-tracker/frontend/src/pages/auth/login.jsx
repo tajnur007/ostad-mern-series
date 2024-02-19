@@ -7,7 +7,7 @@ import { useState } from 'react';
 import { toast } from 'react-toastify';
 import { PAGE_ROUTES, STORAGE_KEYS } from '../../utils/constants/common-constants';
 import { useNavigate } from 'react-router-dom';
-import FullPageLoader from '../../components/full-page-loader';
+import taskTrackerIcon from '../../assets/images/tt-icon.svg';
 
 const LoginPage = () => {
   const [userInfo, setUserInfo] = useState({});
@@ -45,6 +45,10 @@ const LoginPage = () => {
   return (
     <AuthLayout>
       <Form onSubmit={handleLogin}>
+        <h1 className='text-center mb-3' style={{ color: '#22C67F' }}>
+          <img src={taskTrackerIcon} className='me-2' style={{ width: '40px' }} />
+          Task Tracker
+        </h1>
         <h2 className='text-center mb-3'>Hello, Welcome Back!</h2>
         <InputGroup className='mb-3'>
           <InputGroup.Text style={{ width: '100px' }}>Email</InputGroup.Text>

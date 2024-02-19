@@ -1,6 +1,6 @@
 import Table from 'react-bootstrap/Table';
 
-const TasksTable = () => {
+const TasksTable = ({ allTasks }) => {
   return (
     <Table striped bordered hover>
       <thead>
@@ -13,13 +13,15 @@ const TasksTable = () => {
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>Static Title</td>
-          <td>Static description</td>
-          <td>Static User</td>
-          <td>Urgent</td>
-          <td>On Going</td>
-        </tr>
+        {allTasks?.map(task => (
+          <tr key={task._id}>
+            <td>{task.title}</td>
+            <td>{task.description}</td>
+            <td>{task.assignee}</td>
+            <td>{task.priority}</td>
+            <td>{task.status}</td>
+          </tr>
+        ))}
       </tbody>
     </Table>
   );

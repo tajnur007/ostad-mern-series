@@ -5,6 +5,7 @@ import Button from 'react-bootstrap/Button';
 import { PAGE_ROUTES, STORAGE_KEYS } from '../utils/constants/common-constants';
 import { useNavigate } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import taskTrackerIcon from '../assets/images/tt-icon.svg';
 
 const AppNavbar = () => {
   const navigate = useNavigate();
@@ -29,7 +30,10 @@ const AppNavbar = () => {
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary" bg="dark" data-bs-theme="dark">
       <Container>
-        <Navbar.Brand href="#home">Tast Tracker</Navbar.Brand>
+        <Navbar.Brand href="#home">
+          <img src={taskTrackerIcon} className='me-2' style={{ width: '40px' }} />
+          Task Tracker
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">

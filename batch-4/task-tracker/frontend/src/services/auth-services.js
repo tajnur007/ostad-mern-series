@@ -1,10 +1,11 @@
 import axios from 'axios';
+import { API_BASE_URL } from '../utils/constants/common-constants';
 
 
 export const createUser = (userData) => {
   return axios({
     method: 'POST',
-    url: 'http://localhost:5000/user',
+    url: `${API_BASE_URL}/user`,
     data: userData,
   });
 };
@@ -12,7 +13,7 @@ export const createUser = (userData) => {
 export const login = (data) => {
   return axios({
     method: 'POST',
-    url: 'http://localhost:5000/auth/signin',
+    url: `${API_BASE_URL}/auth/signin`,
     data: data,
   });
 };
