@@ -5,7 +5,7 @@ import SignupPage from './pages/auth/signup.jsx';
 import LoginPage from './pages/auth/login.jsx';
 import ForgetPasswordPage from './pages/auth/forget-password.jsx';
 import TasksPage from './pages/tasks';
-import UsersPage from './pages/users.jsx';
+import UsersPage from './pages/users';
 import { PAGE_ROUTES } from './utils/constants/common-constants.js';
 
 export const router = createBrowserRouter([

@@ -2,6 +2,8 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import { TASK_PRIORITY, TASK_STATUS } from '../../utils/constants/task-constants';
+import { useEffect, useState } from 'react';
+import { getAllUsers } from '../../services/user-services';
 
 const CreateTaskModal = ({
   showModal,
@@ -9,6 +11,25 @@ const CreateTaskModal = ({
   handleValueChange,
   handleCreateTask,
 }) => {
+  const [users, setUsers] = useState([]);
+
+  useEffect(() => {
+    getAllUsers()
+      .then(resp => {
+        let respUsers = resp.data.data;
+
+        respUsers = respUsers.filter(user => user.role === 'executive');
+        respUsers = respUsers.map(user => {
+          return ({
+            value: user.email,
+            name: user.name,
+          });
+        });
+
+        setUsers(respUsers);
+      });
+  }, []);
+
   return (
     <Modal centered show={showModal} onHide={handleClose}>
       <Modal.Header closeButton>
@@ -26,9 +47,9 @@ const CreateTaskModal = ({
             Assignee <span className='text-danger'>*</span>
           </Form.Label>
           <Form.Select name='assignee' id='taskAssignee' onChange={handleValueChange}>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
+            {users.map(user => (
+              <option key={user.value} value={user.value}>{user.name}</option>
+            ))}
           </Form.Select>
         </div>
         <div className='mb-3'>

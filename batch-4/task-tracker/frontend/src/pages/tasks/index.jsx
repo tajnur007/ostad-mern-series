@@ -3,9 +3,12 @@ import AuthorizedLayout from '../../components/layouts/authorized-layout';
 import TasksTable from './tasks-table';
 import TasksSummary from './tasks-summary';
 import { getAllTasks } from '../../services/task-services';
-import { useEffect, useState } from 'react';
+import { Fragment, useEffect, useState } from 'react';
 import { TASK_STATUS } from '../../utils/constants/task-constants';
 import Spinner from 'react-bootstrap/Spinner';
+import Form from 'react-bootstrap/Form';
+import InputGroup from 'react-bootstrap/InputGroup';
+import { FiSearch } from "react-icons/fi";
 
 
 const TasksPage = () => {
@@ -49,7 +52,15 @@ const TasksPage = () => {
           <Spinner animation='border' variant='primary' />
         </div>
       ) : (
-        <TasksTable allTasks={allTasks} />
+        <Fragment>
+          <InputGroup className="mb-3 w-25 ms-auto">
+            <Form.Control placeholder="task title" />
+            <InputGroup.Text id="basic-addon1">
+              <FiSearch />
+            </InputGroup.Text>
+          </InputGroup>
+          <TasksTable allTasks={allTasks} />
+        </Fragment>
       )}
     </AuthorizedLayout>
   );
