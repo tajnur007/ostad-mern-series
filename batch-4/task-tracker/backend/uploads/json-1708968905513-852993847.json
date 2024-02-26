@@ -1,0 +1,44 @@
+{
+    {
+        "name" : "Dog smile photo augmented reality filter for social media apps", 
+        "client" : "John Trommbone Jr.",
+        "create_on" : "12-29-2023",
+        "last_modified" : "2 hours ago",
+        "status" : "New Project"
+    },
+    {
+        "name" : "Flying car with renewable energy jet propulsion", 
+        "client" : "James Bond",
+        "create_on" : "12-25-2023",
+        "last_modified" : "9 hours ago",
+        "status" : "New Project"
+    },
+    {
+        "name" : "Self heating coffee mug to keep the contents at the same temperature", 
+        "client" : "John Trommbone Jr.",
+        "create_on" : "06-29-2023",
+        "last_modified" : "03-29-2023",
+        "status" : "Claims Generated"
+    },
+    {
+        "name" : "Organic alcohol swabs for pet use", 
+        "client" : "Bal Krishna Sharma",
+        "create_on" : "12-25-2022",
+        "last_modified" : "1 minutes ago",
+        "status" : "Claims Generated"
+    },
+    {
+        "name" : "Edible phone case cover", 
+        "client" : "David Boon",
+        "create_on" : "07-26-2023",
+        "last_modified" : "12 hours ago",
+        "status" : "Draft Generated"
+    },
+    {
+        "name" : "Zero gravity pen", 
+        "client" : "Aamir Khan",
+        "create_on" : "12-29-2008",
+        "last_modified" : "12 hours ago".
+        "status": "Completed"
+    }
+}

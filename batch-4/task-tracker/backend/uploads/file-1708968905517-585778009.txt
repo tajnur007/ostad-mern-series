@@ -1,0 +1,7 @@
+{
+    "New Project" : 0,
+    "Claims generated" : 2,
+    "Draft generated" : 3,
+    "Complete" : 1
+}
+

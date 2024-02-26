@@ -120,15 +120,14 @@ const singleTask = async (req, res) => {
 
 const allTasks = async (req, res) => {
   try {
-    const filter = {};
     const userData = parseUserToken(req);
 
-    if (userData.role !== 'admin') {
-      filter.createdBy = userData.email;
-      filter.isDeleted = false;
-    }
+    let resp = await TaskModel.find();
 
-    let resp = await TaskModel.find(filter);
+    resp = resp.filter(task => (
+      (task.createdBy == userData.email || task.assignee == userData.email) &&
+      (task.isDeleted == false || userData.role == 'admin')
+    ));
 
     res.send({
       msg: 'All tasks',
